@@ -2,5 +2,8 @@ package com.test.boardstudy.domain;
 
 public class Board {
 
-	private int no;
+	private long no;
+	private String title;
+	private String contents;
+	private long hit;
 }
