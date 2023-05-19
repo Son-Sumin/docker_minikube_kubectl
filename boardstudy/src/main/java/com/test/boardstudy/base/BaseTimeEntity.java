@@ -24,18 +24,18 @@ public abstract class BaseTimeEntity {
 	@Column(name = "reg_date", updatable = false)
     private String createdDate;
 
-//    @LastModifiedDate
-//    @Column(name = "mod_date")
-//   private String modifiedDate;
+    @LastModifiedDate
+    @Column(name = "mod_date")
+    private String modifiedDate;
     
     @PrePersist
     void onPrePersist(){
         this.createdDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-//        this.modifiedDate = createdDate;
+        this.modifiedDate = createdDate;
     }
 
-//    @PreUpdate
-//    void onPreUpdate(){
-//        this.modifiedDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-//    }
+    @PreUpdate
+    void onPreUpdate(){
+        this.modifiedDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+    }
 }
