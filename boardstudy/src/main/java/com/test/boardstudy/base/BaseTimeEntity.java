@@ -21,11 +21,11 @@ import lombok.Getter;
 public abstract class BaseTimeEntity {
 
 	@CreatedDate
-	@Column(name = "reg_date", updatable = false)
+	@Column(name = "regDate", updatable = false)
     private String createdDate;
 
     @LastModifiedDate
-    @Column(name = "mod_date")
+    @Column(name = "modDate")
     private String modifiedDate;
     
     @PrePersist
