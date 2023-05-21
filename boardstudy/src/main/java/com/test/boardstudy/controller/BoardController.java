@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.test.boardstudy.domain.Board;
 import com.test.boardstudy.service.BoardService;
@@ -19,22 +20,22 @@ public class BoardController {
 	private BoardService boardService;
 	
 //  게시글 리스트
-	@GetMapping({"", "/list"})
+	@RequestMapping({"", "/list"})
 	public String list(Model model) {
 		model.addAttribute("boardList", boardService.getContentsList());
 		return "board/list";
 	}
 	
 //	게시글 작성 폼
-	@GetMapping("/board/write")
-	public String boardWriteForm(Board board) {
+	@RequestMapping(value = "/board/write", method=RequestMethod.GET)
+	public String boardWrite() {
 		return "board/write";
 	}
 	
 //	게시글 작성
-	@PostMapping("/board/write")
-	public Board boardWrite(@ModelAttribute Board board) {
-		board.setHit(0L);
-		return boardService.boardView(board.getNo());
+	@RequestMapping(value = "/board/write", method=RequestMethod.POST)
+	public String boardWrite(Board board) {
+		boardService.write(board);
+		return "redirect:/board";
 	}
 }

@@ -21,4 +21,9 @@ public class BoardService {
 	public Board boardView(Long no) {
 		return boardRepository.findByNo(no);
 	}
+
+	public Board write(Board board) {
+		return boardRepository.save(board);
+		
+	}
 }
