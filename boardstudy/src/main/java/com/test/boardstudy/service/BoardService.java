@@ -17,4 +17,8 @@ public class BoardService {
 	public List<Board> getContentsList() {
 		return boardRepository.findAll();
 	}
+
+	public Board boardView(Long no) {
+		return boardRepository.findByNo(no);
+	}
 }

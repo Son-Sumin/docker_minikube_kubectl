@@ -8,4 +8,6 @@ import com.test.boardstudy.domain.Board;
 @Repository
 public interface BoardRepository extends JpaRepository<Board, Long> {
 
+	Board findByNo(Long no);
+
 }
