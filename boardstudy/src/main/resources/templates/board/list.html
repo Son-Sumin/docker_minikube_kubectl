@@ -22,17 +22,18 @@
 						<th>   조회수   </th>
 						<th>   등록일   </th>
 						<th>   수정일   </th>
+						<th>   삭제   </th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr th:each="board : ${boardList}">
 						<td th:text="${board.no}"></td>
 						<td th:text="${board.title}"></td>
-						<td th:text="${board.contents}"></td>
-						<!-- <td><a th:text="${board.contents}" th:href="@{/cocktail/view/{no}(no= ${cocktail.no})}"></a></td>   -->
+						<td><a th:text="${board.contents}" th:href="@{/board/view/{no}(no= ${board.no})}"></a></td>
 						<td th:text="${board.hit}"></td>
 						<td th:text="${board.createdDate}"></td>
 						<td th:text="${board.modifiedDate}"></td>
+						<td><a th:text="삭제하기" th:href="@{/board/delete/{no}(no= ${board.no})}"></a></td>
 					</tr>
 				</tbody>
 			</table>

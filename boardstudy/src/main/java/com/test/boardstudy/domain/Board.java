@@ -27,8 +27,8 @@ public class Board extends BaseTimeEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long no;
+	private Long no;
 	private String title;
 	private String contents;
-	private long hit;
+	private Long hit;
 }
