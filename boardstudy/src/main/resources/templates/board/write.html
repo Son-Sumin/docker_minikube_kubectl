@@ -8,27 +8,20 @@
 	
 	<div class="form-container">
 		<form action="/cocktail/form" method="post">
-			<div class="form-group">
-				<label for="type">종류   </label>
-				<input type="radio" name="type" value="alcohol" checked="checked">알코올
-				<input type="radio" name="type" value="non-alcohol">논알코올
+			<div class="form-group">			
+				<label for="name">제목 </label>
+				<input type="text" id="title" name="title" placeholder="제목을 입력하세요">  <!-- 스프링이 MemberForm의 String name과 연결해줌 -->
 				<br><br>
 				
-				<label for="name">이름 </label>
-				<input type="text" id="name" name="name" placeholder="이름을 입력하세요">  <!-- 스프링이 MemberForm의 String name과 연결해줌 -->
+				<label for="engName">내용 </label>
+				<input type="text" id="contents" name="contents" placeholder="내용을 입력하세요">
 				<br><br>
 				
-				<label for="engName">name </label>
-				<input type="text" id="engName" name="engName" placeholder="Please enter your name">
-				<br><br>
-				
-				<label for="cocktailContents">칵테일 설명 </label>
-				<input type="text" id="cocktailContents" name="cocktailContents" placeholder="칵테일 설명">
-				<br><br>
-				
-				<label for="recipeContents">칵테일 레시피 </label>
-				<input type="text" id="recipeContents" name="recipeContents" placeholder="칵테일 레시피">
-				<br><br>
+				<input type="hidden" id="hit" name="hit">
+
+				<input type="hidden" id="regDate" name="regDate">
+
+				<input type="hidden" id="modDate" name="modDate">
 			</div>
 			<br><br>
 			<button type="submit">등록</button>
