@@ -10,4 +10,6 @@ public interface BoardRepository extends JpaRepository<Board, Long> {
 
 	Board findByNo(Long no);
 
+	void deleteByNo(Long no);
+
 }
