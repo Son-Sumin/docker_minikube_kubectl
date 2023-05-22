@@ -19,20 +19,20 @@ public class BoardController {
 	@Autowired
 	private BoardService boardService;
 	
-//  게시글 리스트
+    // 게시글 리스트
 	@RequestMapping({"", "/list"})
 	public String list(Model model) {
 		model.addAttribute("boardList", boardService.getContentsList());
 		return "board/list";
 	}
 	
-//	게시글 작성 폼
+	// 게시글 작성 폼
 	@RequestMapping(value = "/board/write", method=RequestMethod.GET)
 	public String boardWrite() {
 		return "board/write";
 	}
 	
-//	게시글 작성
+	// 게시글 작성
 	@RequestMapping(value = "/board/write", method=RequestMethod.POST)
 	public String boardWrite(Board board) {
 		boardService.write(board);
