@@ -56,6 +56,12 @@
       - 다른 옵션 설정 필요 없을 경우
       web: java -jar build/libs/boardstudy-0.0.1-SNAPSHOT.jar
       ```
+      <br><br>
+      <br><br>
+      
+![자료1](https://github.com/Son-Sumin/helloheroku/assets/114986832/9200c26f-cb0a-482d-923e-c03d19af04b5)
+
+
 <br><br>
 
 <참고 사이트>   
